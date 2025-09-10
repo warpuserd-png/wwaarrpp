@@ -91,9 +91,27 @@
 			<fe:Property name="AllowOverwrite">true</fe:Property>
 			<fe:Property name="FileDelete">false</fe:Property>
 		</fe:Component>
-		<fe:Component fb:x="16" fb:y="288" name="End1" type="End">
+		<fe:Component fb:x="16" fb:y="356" name="End1" type="End">
 			<fe:Property name="CommitTransaction">true</fe:Property>
 			<fe:Property name="ReturnValue"/>
+		</fe:Component>
+		<fe:Component fb:x="16" fb:y="288" name="SimpleMail1" type="SimpleMail">
+			<fb:Description height="17" visible="true" width="139" x="52" y="288">
+				<fb:Property name="Background">40ffff00</fb:Property>
+				<fb:Property name="Text">featureDでの作業内容</fb:Property>
+			</fb:Description>
+			<fe:Property name="Exception"/>
+			<fe:Property name="Connection"/>
+			<fe:Property name="From"/>
+			<fe:Property name="To"/>
+			<fe:Property name="Cc"/>
+			<fe:Property name="Bcc"/>
+			<fe:Property name="Subject"/>
+			<fe:Property name="UseStream">true</fe:Property>
+			<fe:Property name="Body"/>
+			<fe:Property name="KeepConnection">true</fe:Property>
+			<fe:Property designer="true" name="Attachment">false</fe:Property>
+			<fe:Property name="Encoding">auto</fe:Property>
 		</fe:Component>
 		<fe:Link name="Link1">
 			<fe:Input name="Start1"/>
@@ -112,6 +130,11 @@
 		</fe:Link>
 		<fe:Link name="Link4">
 			<fe:Input name="FilePut1"/>
+			<fe:Output name="SimpleMail1"/>
+			<fb:Line type="Direct"/>
+		</fe:Link>
+		<fe:Link name="Link5">
+			<fe:Input name="SimpleMail1"/>
 			<fe:Output name="End1"/>
 			<fb:Line type="Direct"/>
 		</fe:Link>
