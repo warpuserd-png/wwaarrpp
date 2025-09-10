@@ -73,9 +73,7 @@
 			<fe:Property name="MvMode">2</fe:Property>
 			<fe:Property name="Mappings"/>
 			<fe:Output>
-				<fe:Stream format="Text">
-					<fe:Property name="Encoding">utf-8</fe:Property>
-				</fe:Stream>
+				<fe:SyncDef component="RDBPut1"/>
 			</fe:Output>
 		</fe:Component>
 		<fe:Component fb:x="16" fb:y="220" name="FilePut1" type="FileSystem(Put)">
@@ -90,10 +88,34 @@
 			<fe:Property name="AppendMode">New</fe:Property>
 			<fe:Property name="AllowOverwrite">true</fe:Property>
 			<fe:Property name="FileDelete">false</fe:Property>
+			<fe:Input>
+				<fe:SyncDef component="RDBPut1"/>
+			</fe:Input>
 		</fe:Component>
-		<fe:Component fb:x="16" fb:y="288" name="End1" type="End">
+		<fe:Component fb:x="16" fb:y="356" name="End1" type="End">
 			<fe:Property name="CommitTransaction">true</fe:Property>
 			<fe:Property name="ReturnValue"/>
+		</fe:Component>
+		<fe:Component fb:x="16" fb:y="288" name="RDBPut1" type="RDB(Put)">
+			<fb:Description height="17" visible="true" width="116" x="52" y="288">
+				<fb:Property name="Background">40ff6600</fb:Property>
+				<fb:Property name="Text">featureCでの作業内容</fb:Property>
+			</fb:Description>
+			<fe:Property name="Exception"/>
+			<fe:Property name="ConnectException"/>
+			<fe:Property name="Connection"/>
+			<fe:Property name="Mode">Insert</fe:Property>
+			<fe:Property name="TableName"/>
+			<fe:Property name="UpdateCount"/>
+			<fe:Property name="UpsertInsertCount"/>
+			<fe:Property name="UpsertUpdateCount"/>
+			<fe:Property name="BatchCount">100</fe:Property>
+			<fe:Property name="QueryTimeout">0</fe:Property>
+			<fe:Input>
+				<fe:Stream format="Record">
+					<fe:FieldDef/>
+				</fe:Stream>
+			</fe:Input>
 		</fe:Component>
 		<fe:Link name="Link1">
 			<fe:Input name="Start1"/>
@@ -112,6 +134,11 @@
 		</fe:Link>
 		<fe:Link name="Link4">
 			<fe:Input name="FilePut1"/>
+			<fe:Output name="RDBPut1"/>
+			<fb:Line type="Direct"/>
+		</fe:Link>
+		<fe:Link name="Link5">
+			<fe:Input name="RDBPut1"/>
 			<fe:Output name="End1"/>
 			<fb:Line type="Direct"/>
 		</fe:Link>
