@@ -66,10 +66,6 @@
 			</fe:Output>
 		</fe:Component>
 		<fe:Component fb:x="16" fb:y="152" name="Mapper1" type="Mapper2">
-			<fb:Description height="17" visible="true" width="130" x="52" y="161">
-				<fb:Property name="Background">40ff6600</fb:Property>
-				<fb:Property name="Text">featureCでの作業内容</fb:Property>
-			</fb:Description>
 			<fe:Property name="Exception"/>
 			<fe:Property name="LoopProcess">false</fe:Property>
 			<fe:Property name="PassStream">false</fe:Property>
@@ -77,23 +73,8 @@
 			<fe:Property name="MvMode">2</fe:Property>
 			<fe:Property name="Mappings"/>
 			<fe:Output>
-				<fe:Stream format="CSV">
-					<fe:Property name="StartRow">1</fe:Property>
-					<fe:Property name="Separator">,</fe:Property>
-					<fe:Property name="QuotedBy">"</fe:Property>
-					<fe:Property name="QuoteTarget">all</fe:Property>
-					<fe:Property name="NullQuoting">quote</fe:Property>
-					<fe:Property name="EscapeMode">bs</fe:Property>
-					<fe:Property name="ReadTrim">true</fe:Property>
+				<fe:Stream format="Text">
 					<fe:Property name="Encoding">utf-8</fe:Property>
-					<fe:Property name="LineFeed">(No conversion)</fe:Property>
-					<fe:Property name="OutputFieldName">False</fe:Property>
-					<fe:Property name="MemoryReductionMode">False</fe:Property>
-					<fe:FieldDef>
-						<fe:Field name="field1" type="String"/>
-						<fe:Field name="field2" type="String"/>
-						<fe:Field name="field3" type="String"/>
-					</fe:FieldDef>
 				</fe:Stream>
 			</fe:Output>
 		</fe:Component>
