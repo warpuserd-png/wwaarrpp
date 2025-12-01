@@ -95,8 +95,8 @@
 			<fe:Property name="CommitTransaction">true</fe:Property>
 			<fe:Property name="ReturnValue"/>
 		</fe:Component>
-		<fe:Component fb:x="16" fb:y="288" name="SimpleMail1" type="SimpleMail">
-			<fb:Description height="17" visible="true" width="139" x="52" y="288">
+		<fe:Component fb:x="50" fb:y="288" name="SimpleMail1" type="SimpleMail">
+			<fb:Description height="17" visible="true" width="139" x="86" y="288">
 				<fb:Property name="Background">40ffff00</fb:Property>
 				<fb:Property name="Text">featureDでの作業内容</fb:Property>
 			</fb:Description>
